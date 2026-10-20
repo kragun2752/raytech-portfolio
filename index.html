@@ -1,528 +1,285 @@
-<!DOCTYPE html><html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="description" content="Raymond Munthali — RAYTECH. IT Technician, Computer Science student, and technology enthusiast from Malawi.">
-  <title>RAYTECH 🚀 | Raymond Munthali</title>  <style>
-    :root {
-      --bg: #090909;
-      --surface: #141414;
-      --orange: #ff7900;
-      --white: #f5f5f5;
-      --muted: #a5a5a5;
-      --border: #292929;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050806">
+<meta name="description" content="RAYTECH — Bridging Technology & Machines.">
+<title>RAYTECH | Technology & Innovation</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
+:root {
+  --bg: #050806;
+  --panel: #0c1510;
+  --green: #00c781;
+  --bright: #39f5a4;
+  --text: #f0fff6;
+  --muted: #a2b3a8;
+  --border: #1b3929;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+a { text-decoration: none; color: inherit; }
+.container { width: min(1080px, 90%); margin: auto; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: #050806;
+  border-bottom: 1px solid var(--border);
+}
+nav {
+  min-height: 75px; display: flex;
+  align-items: center; justify-content: space-between; gap: 18px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 22px; }
+.brand b { color: var(--bright); }
+.logo {
+  display: grid; place-items: center; width: 42px; height: 42px;
+  border-radius: 10px; background: var(--green); color: #00190d;
+  font-size: 24px;
+}
+.links { display: flex; align-items: center; gap: 22px; }
+.links a { color: var(--muted); font-size: 14px; }
+.links a:hover { color: var(--bright); }
+.links .contact-link { border: 1px solid var(--green); padding: 8px 13px; border-radius: 7px; color: var(--bright); }
+.hero { padding: 85px 0 75px; }
+.hero-grid {
+  display: grid; grid-template-columns: 1.2fr .8fr;
+  align-items: center; gap: 50px;
+}
+.eyebrow {
+  color: var(--bright); font-size: 12px; font-weight: bold;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px;
+}
+h1 { font-size: clamp(43px, 6.5vw, 73px); line-height: 1.08; letter-spacing: -2px; }
+.green { color: var(--bright); }
+.intro { color: var(--muted); margin: 22px 0 27px; max-width: 520px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 12px 18px; border-radius: 7px;
+  border: 1px solid var(--border); font-weight: bold; font-size: 14px;
+}
+.btn-primary { background: var(--green); color: #00180d; border-color: var(--green); }
+.btn-secondary { color: var(--text); }
+.btn:hover { border-color: var(--bright); }
+.profile {
+  max-width: 330px; width: 100%; justify-self: center;
+  padding: 9px; border: 1px solid var(--green);
+  border-radius: 18px; background: var(--panel);
+}
+.profile img {
+  width: 100%; aspect-ratio: 4/5; object-fit: cover;
+  display: block; border-radius: 12px; background: #101a13;
+}
+.profile-caption { text-align: center; padding: 13px 5px 6px; }
+.profile-caption strong { display: block; font-size: 18px; }
+.profile-caption span { color: var(--bright); font-size: 11px; }
+section.content { padding: 75px 0; border-top: 1px solid #14251a; }
+h2 { font-size: clamp(30px, 4vw, 42px); line-height: 1.2; }
+.section-intro { color: var(--muted); max-width: 620px; margin: 12px 0 30px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+.about-text { color: var(--muted); }
+.about-text p + p { margin-top: 14px; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+.card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px;
+}
+.card:hover { border-color: var(--green); }
+.card-icon {
+  width: 44px; height: 44px; display: grid; place-items: center;
+  border: 1px solid var(--border); background: #10251a;
+  color: var(--bright); border-radius: 10px; font-size: 22px;
+  margin-bottom: 17px;
+}
+.card h3 { margin-bottom: 9px; font-size: 18px; }
+.card p { color: var(--muted); font-size: 14px; }
+.project-link { display: inline-block; margin-top: 15px; color: var(--bright); font-size: 13px; font-weight: bold; }
+.skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+.skill { padding: 7px 12px; border: 1px solid var(--border); border-radius: 6px; color: #c8f5dc; font-size: 13px; }
+.contact-box {
+  padding: 35px; border: 1px solid var(--border);
+  border-radius: 14px; background: var(--panel);
+}
+.contact-box p { color: var(--muted); margin: 14px 0 24px; }
+.contact-details { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 24px; color: #c8f5dc; font-size: 14px; }
+footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: 12px; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+footer strong { color: var(--bright); }
+@media(max-width: 760px) {
+  .hero { padding: 55px 0; }
+  .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+  .profile { max-width: 280px; }
+  .about-grid { grid-template-columns: 1fr; gap: 20px; }
+  .cards { grid-template-columns: 1fr; }
+  section.content { padding: 55px 0; }
+  .links { gap: 12px; }
+  .links a { font-size: 12px; }
+  .links .optional { display: none; }
+  .contact-box { padding: 23px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--white);
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1100px, 90%);
-      margin: auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(9, 9, 9, .94);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-    }
-
-    nav {
-      min-height: 72px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo {
-      font-size: 1.45rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    .logo span,
-    .orange {
-      color: var(--orange);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: .88rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--orange);
-    }
-
-    .hero {
-      min-height: 85vh;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: center;
-      gap: 55px;
-      padding-top: 65px;
-      padding-bottom: 65px;
-    }
-
-    .eyebrow {
-      color: var(--orange);
-      font-size: .82rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 5.3rem);
-      line-height: 1.08;
-      margin: 18px 0;
-      letter-spacing: -2px;
-    }
-
-    h1 span {
-      color: var(--orange);
-    }
-
-    .hero p {
-      color: var(--muted);
-      max-width: 570px;
-      margin-bottom: 27px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 13px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 11px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      border: 1px solid var(--orange);
-      transition: .2s;
-    }
-
-    .btn-primary {
-      background: var(--orange);
-      color: #090909;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: .85;
-    }
-
-    .btn-outline {
-      color: var(--white);
-    }
-
-    .profile-card {
-      background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-      border: 1px solid #343434;
-      border-radius: 18px;
-      padding: 32px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
-    }
-
-    .profile-photo {
-      width: 190px;
-      height: 190px;
-      margin: 0 auto 22px;
-      border-radius: 50%;
-      border: 3px solid var(--orange);
-      object-fit: cover;
-      display: block;
-      background: #222;
-    }
-
-    .photo-fallback {
-      width: 190px;
-      height: 190px;
-      margin: 0 auto 22px;
-      border-radius: 50%;
-      border: 3px solid var(--orange);
-      background: #222;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 4rem;
-      font-weight: 900;
-      color: var(--orange);
-    }
-
-    .profile-card h2 {
-      font-size: 1.5rem;
-    }
-
-    .profile-card p {
-      color: var(--muted);
-      margin: 6px 0;
-    }
-
-    .location {
-      color: var(--orange) !important;
-      font-size: .9rem;
-    }
-
-    section {
-      padding: 80px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-heading {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      max-width: 650px;
-      margin-bottom: 32px;
-    }
-
-    .about-grid,
-    .skills-grid,
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .panel,
-    .skill,
-    .project {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 25px;
-    }
-
-    .panel h3,
-    .project h3 {
-      margin-bottom: 10px;
-    }
-
-    .panel p,
-    .project p {
-      color: var(--muted);
-    }
-
-    .skills-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .skill {
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .skill span {
-      display: block;
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-    }
-
-    .project {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .project-tag {
-      color: var(--orange);
-      font-size: .76rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .project .btn {
-      margin-top: 18px;
-    }
-
-    .contact-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 30px;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 15px;
-      margin: 22px 0;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-list a:hover {
-      color: var(--orange);
-    }
-
-    footer {
-      padding: 25px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    @media (max-width: 760px) {
-      nav {
-        padding: 15px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 12px 17px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        min-height: auto;
-        padding-top: 65px;
-      }
-
-      .profile-card {
-        max-width: 430px;
-        width: 100%;
-        margin: auto;
-      }
-
-      .about-grid,
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      section {
-        padding: 60px 0;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style></head><body>
-  <header>
-    <nav class="container">
-      <a class="logo" href="#home">RAYTECH<span> 🚀</span></a>  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-  </header>  <main>
-    <section class="hero container" id="home">
-      <div>
-        <div class="eyebrow">Technology • Innovation • Growth</div>    <h1>
-      Hello, I'm<br>
-      Raymond <span>Munthali.</span>
-    </h1>
-
-    <p>
-      An IT technician, Computer Science student, and automobile
-      mechanics student passionate about technology, problem-solving,
-      software development, and building practical digital solutions.
-    </p>
-
-    <div class="buttons">
-      <a class="btn btn-primary" href="#projects">Explore My Work</a>
-      <a class="btn btn-outline" href="#contact">Contact Me</a>
+<body>
+<header>
+  <nav class="container">
+    <a class="brand" href="#home">
+      <span class="logo">R</span> RAY<b>TECH</b>
+    </a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills" class="optional">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="contact-link">Contact</a>
     </div>
-  </div>
+  </nav>
+</header>
 
-  <div class="profile-card">
-    <img
-      class="profile-photo"
-      src="profile.jpg"
-      alt="Raymond Munthali"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-    >
-
-    <div class="photo-fallback" style="display:none;">RM</div>
-
-    <h2>Raymond Munthali</h2>
-    <p>Founder of RAYTECH</p>
-    <p class="location">📍 Lilongwe, Malawi</p>
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <div class="eyebrow">Get to know me</div>
-    <h2 class="section-heading">About <span class="orange">Me</span></h2>
-
-    <p class="section-intro">
-      Bridging technology and machines through continuous learning,
-      creativity, and hands-on experience.
-    </p>
-
-    <div class="about-grid">
-      <div class="panel">
-        <h3>💻 Information Technology</h3>
-        <p>
-          IT support, troubleshooting, computer systems, and helping
-          technology work effectively for people and businesses.
-        </p>
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Technology · Innovation · Growth</div>
+      <h1>Bridging<br>Technology <span class="green">&</span><br>Machines.</h1>
+      <p class="intro">
+        I'm Raymond, the tech guy behind RAYTECH. I'm passionate about IT
+        support, Computer Science, web development and automotive technology.
+        I turn ideas into practical solutions.
+      </p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#projects">Explore My Work ↗</a>
+        <a class="btn btn-secondary" href="#contact">Contact Me</a>
       </div>
-
-      <div class="panel">
-        <h3>🎓 Education & Growth</h3>
-        <p>
-          Studying Computer Science while pursuing automobile mechanics
-          to develop skills across both digital and mechanical systems.
-        </p>
+    </div>
+    <div class="profile">
+      <img src="profile.jpg" alt="Raymond — RAYTECH"
+           onerror="this.style.display='none'">
+      <div class="profile-caption">
+        <strong>RAYTECH</strong>
+        <span>IT SUPPORT · DEVELOPMENT · AUTOMOTIVE</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
-  <div class="container">
-    <div class="eyebrow">What I work with</div>
-    <h2 class="section-heading">My <span class="orange">Skills</span></h2>
-
-    <p class="section-intro">
-      Skills I'm developing through education, projects, and practical
-      experience.
-    </p>
-
-    <div class="skills-grid">
-      <div class="skill"><span>🖥️</span>IT Support</div>
-      <div class="skill"><span>🌐</span>Web Development</div>
-      <div class="skill"><span>⚙️</span>System Troubleshooting</div>
-      <div class="skill"><span>💻</span>Computer Systems</div>
-      <div class="skill"><span>🚗</span>Automobile Mechanics</div>
-      <div class="skill"><span>🚀</span>Problem Solving</div>
+<section class="content" id="about">
+  <div class="container about-grid">
+    <div>
+      <div class="eyebrow">01 / About Me</div>
+      <h2>Technology with<br><span class="green">a purpose.</span></h2>
+    </div>
+    <div class="about-text">
+      <p>My interests connect the digital world with real-world systems.
+      I'm developing my knowledge in Computer Science, IT system support
+      and automobile mechanics.</p>
+      <p>Through RAYTECH, I showcase my learning, projects and passion
+      for useful and reliable technology solutions.</p>
     </div>
   </div>
 </section>
 
-<section id="projects">
+<section class="content" id="skills">
   <div class="container">
-    <div class="eyebrow">What I'm building</div>
-    <h2 class="section-heading">Featured <span class="orange">Projects</span></h2>
+    <div class="eyebrow">02 / What I Do</div>
+    <h2>My areas of <span class="green">focus.</span></h2>
+    <p class="section-intro">A growing skill set across software, IT and mechanical systems.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">&lt;/&gt;</div>
+        <h3>Web Development</h3>
+        <p>Building websites and learning to create useful digital experiences.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⌘</div>
+        <h3>IT & System Support</h3>
+        <p>Computer troubleshooting, software installation and system maintenance.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⚙</div>
+        <h3>Automotive Technology</h3>
+        <p>Learning automobile systems, mechanical skills and practical diagnostics.</p>
+      </article>
+    </div>
+    <div class="skills">
+      <span class="skill">HTML & CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">IT Support</span>
+      <span class="skill">Computer Science</span>
+      <span class="skill">Problem Solving</span>
+      <span class="skill">Automotive Mechanics</span>
+    </div>
+  </div>
+</section>
 
-    <p class="section-intro">
-      Practical projects that reflect my interest in technology,
-      entrepreneurship, and digital innovation.
-    </p>
-
-    <div class="projects-grid">
-      <article class="project">
-        <div class="project-tag">WEB DEVELOPMENT</div>
+<section class="content" id="projects">
+  <div class="container">
+    <div class="eyebrow">03 / Selected Work</div>
+    <h2>Projects & <span class="green">innovation.</span></h2>
+    <p class="section-intro">Projects reflecting my journey in technology.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">🌱</div>
         <h3>Pioneers Investments</h3>
-        <p>
-          A farm-products marketplace project designed to support product
-          listings, customer orders, inventory management, and business
-          analytics.
-        </p>
-        <a
-          class="btn btn-outline"
-          href="https://pioneers-investments.onrender.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >View Live Project ↗</a>
+        <p>A farm-products marketplace project for product listings, orders and business management.</p>
+        <a class="project-link" href="https://pioneers-investments.onrender.com/" target="_blank" rel="noopener noreferrer">View Project ↗</a>
       </article>
-
-      <article class="project">
-        <div class="project-tag">PERSONAL BRAND</div>
+      <article class="card">
+        <div class="card-icon">💻</div>
         <h3>RAYTECH Portfolio</h3>
-        <p>
-          My personal digital portfolio showcasing my background,
-          developing skills, projects, and technology journey.
-        </p>
-        <a class="btn btn-outline" href="#contact">Get in Touch ↗</a>
+        <p>My personal portfolio showcasing my skills, projects and professional journey.</p>
+        <a class="project-link" href="#home">You're here ↗</a>
+      </article>
+      <article class="card">
+        <div class="card-icon">🔐</div>
+        <h3>RAYTECH Vault</h3>
+        <p>An Android app concept exploring secure access and private local storage.</p>
+        <span class="project-link">App concept</span>
       </article>
     </div>
   </div>
 </section>
 
-<section id="contact">
+<section class="content" id="contact">
   <div class="container">
-    <div class="eyebrow">Let's connect</div>
-    <h2 class="section-heading">Contact <span class="orange">Me</span></h2>
-
-    <p class="section-intro">
-      Have a project, opportunity, or idea? Feel free to reach out.
-    </p>
-
     <div class="contact-box">
-      <h3>Raymond Munthali | RAYTECH 🚀</h3>
-
-      <div class="contact-list">
-        <div>📧 Email:
-          <a href="mailto:kumbukaniraymunthali@gmail.com">
-            kumbukaniraymunthali@gmail.com
-          </a>
-        </div>
-
-        <div>📱 Phone:
-          <a href="tel:0990727921">0990727921</a>
-        </div>
-
-        <div>📍 Location: Lilongwe, Malawi</div>
-
-        <div>💼 GitHub:
-          <a
-            href="https://github.com/kragun2752"
-            target="_blank"
-            rel="noopener noreferrer"
-          >github.com/kragun2752 ↗</a>
-        </div>
+      <div class="eyebrow">04 / Contact</div>
+      <h2>Let's build something<br><span class="green">meaningful.</span></h2>
+      <p>Have a project, opportunity or technology idea? Let's connect.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="tel:0990727921">Call Me</a>
+        <a class="btn btn-secondary" href="https://wa.me/265990727921" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/kragun2752" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
-
-      <a
-        class="btn btn-primary"
-        href="mailto:kumbukaniraymunthali@gmail.com"
-      >Send Me an Email</a>
+      <div class="contact-details">
+        <span>☎ 0990727921</span>
+        <span>📍 Malawi</span>
+        <span>⌘ RAYTECH</span>
+      </div>
     </div>
   </div>
 </section>
+</main>
 
-  </main>  <footer>
-    <div class="container">
-      © <span id="year"></span> RAYTECH 🚀 — Raymond Munthali.
-      Built with purpose in Malawi.
-    </div>
-  </footer>  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script></body>
-</html>
+<footer>
+  <div class="container footer-inner">
+    <span><strong>RAYTECH</strong> — Bridging Technology & Machines.</span>
+    <span>© <span id="year">2026</span> RAYTECH. Built with purpose.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+  </html>
+  
